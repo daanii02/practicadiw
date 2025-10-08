@@ -1,8 +1,6 @@
 package com.diw.practica.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -13,7 +11,8 @@ public class Usuario {
     @OneToMany
     private List<Libro> librosPrestados;
     private enum rol {ADMIN, PROFESOR, ALUMNO};
-
+    @Enumerated(EnumType.STRING)
+    private rol rol;
     public Usuario() {
     }
 

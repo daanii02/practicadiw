@@ -1,5 +1,7 @@
 package com.diw.practica.model;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 
 @Entity
@@ -11,6 +13,8 @@ public class Libro {
         private int fecha;
         private String isbn;
         private enum estado {PENDIENTE, ESPERA, TRAMITADO};
+
+        @Enumerated(EnumType.STRING)
         private estado estadoLibro;
 
         public Libro() {
