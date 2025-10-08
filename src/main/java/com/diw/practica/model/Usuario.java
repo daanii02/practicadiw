@@ -7,12 +7,15 @@ import java.util.List;
 @Entity
 public class Usuario {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String nombre;
     @OneToMany
     private List<Libro> librosPrestados;
     private enum rol {ADMIN, PROFESOR, ALUMNO};
     @Enumerated(EnumType.STRING)
     private rol rol;
+
+
     public Usuario() {
     }
 

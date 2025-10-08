@@ -1,19 +1,16 @@
 package com.diw.practica.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Libro {
-    @Id
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private String titulo;
         private String autor;
         private String editorial;
         private int fecha;
         private String isbn;
         private enum estado {PENDIENTE, ESPERA, TRAMITADO};
-
         @Enumerated(EnumType.STRING)
         private estado estadoLibro;
 
