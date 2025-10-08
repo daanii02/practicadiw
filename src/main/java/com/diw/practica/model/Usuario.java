@@ -1,9 +1,16 @@
 package com.diw.practica.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 import java.util.List;
 
+@Entity
 public class Usuario {
+    @Id
     private String nombre;
+    @OneToMany
     private List<Libro> librosPrestados;
     private enum rol {ADMIN, PROFESOR, ALUMNO};
 
@@ -20,6 +27,7 @@ public class Usuario {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
 
 
 }

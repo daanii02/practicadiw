@@ -1,6 +1,10 @@
 package com.diw.practica.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Libro {
+    @Id
         private String titulo;
         private String autor;
         private String editorial;
@@ -60,8 +64,8 @@ public class Libro {
         public void setIsbn(String isbn) {
             this.isbn = isbn;
         }
-        public estadoLibro getEstadoLibro() {
-
+        public estado getEstadoLibro() {
+            return estadoLibro;
         }
         public void setEstadoLibro(estado estadoLibro) {
             this.estadoLibro = estadoLibro;
