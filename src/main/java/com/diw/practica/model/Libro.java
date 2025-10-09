@@ -2,14 +2,17 @@ package com.diw.practica.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "libro")
 public class Libro {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue (strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String isbn;
         private String titulo;
         private String autor;
         private String editorial;
         private int fecha;
-        private String isbn;
+        private double precioEstimado;
         private enum estado {PENDIENTE, ESPERA, TRAMITADO};
         @Enumerated(EnumType.STRING)
         private estado estadoLibro;
@@ -18,16 +21,22 @@ public class Libro {
         }
 
 
-        public Libro(String titulo, String autor, String editorial, int fecha, String isbn, double precioEstimado) {
+        public Libro(String titulo, String autor, String editorial, int fecha, String isbn,double precioEstimado) {
             this.titulo = titulo;
             this.autor = autor;
             this.editorial = editorial;
             this.fecha = fecha;
             this.isbn = isbn;
-            this.estadoLibro = null;
         }
 
         // Getters y Setters
+        public Long getId() {
+            return id;
+        }
+        public void setId(Long id) {
+            this.id = id;
+        }
+
         public String getTitulo() {
             return titulo;
         }
@@ -70,6 +79,12 @@ public class Libro {
         }
         public void setEstadoLibro(estado estadoLibro) {
             this.estadoLibro = estadoLibro;
+        }
+        public double getPrecioEstimado() {
+            return precioEstimado;
+        }
+        public void setPrecioEstimado(double precioEstimado) {
+            this.precioEstimado = precioEstimado;
         }
 
     }
