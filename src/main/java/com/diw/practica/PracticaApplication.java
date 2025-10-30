@@ -38,7 +38,12 @@ class DataInitializer {
         libro.setAutor("Miguel de Cervantes");
         libro.setEditorial("Editorial1");
         libro.setIsbn("1234567890");
+        libro.setFecha(1956);
+        libro.setPrecioEstimado(15);
+        libro.setEstadoLibro(Libro.Estado.valueOf("PENDIENTE"));
         libroRepository.save(libro);
+
+
 
         Usuario usuario = new Usuario();
         usuario.setNombre("dani123");
