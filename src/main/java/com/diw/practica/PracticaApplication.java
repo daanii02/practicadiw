@@ -42,9 +42,9 @@ class DataInitializer {
 
         Usuario usuario = new Usuario();
         usuario.setNombre("dani123");
-        //usuario.setEmail("dani@email.com");
+        usuario.setEmail("dani@email.com");
         usuario.setPassword("123");
-        //usuario.setRol(Usuario.Rol.ALUMNO);
+        usuario.setRol(Usuario.Rol.ALUMNO);
         usuarioRepository.save(usuario);
     }
 }
