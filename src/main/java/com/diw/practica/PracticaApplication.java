@@ -1,7 +1,9 @@
 package com.diw.practica;
 
 import com.diw.practica.dao.libro_repository;
+import com.diw.practica.dao.usuario_repository;
 import com.diw.practica.model.Libro;
+import com.diw.practica.model.Usuario;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +28,9 @@ class DataInitializer {
     @Autowired
     private libro_repository libroRepository;
 
+    @Autowired
+    private usuario_repository usuarioRepository;
+
     @PostConstruct
     public void init() {
         Libro libro = new Libro();
@@ -35,8 +40,11 @@ class DataInitializer {
         libro.setIsbn("1234567890");
         libroRepository.save(libro);
 
-        System.out.println("📚 Libro inicial insertado en la base de datos.");
+        Usuario usuario = new Usuario();
+        usuario.setNombre("dani123");
+        //usuario.setEmail("dani@email.com");
+        usuario.setPassword("123");
+        //usuario.setRol(Usuario.Rol.ALUMNO);
+        usuarioRepository.save(usuario);
     }
 }
-
-

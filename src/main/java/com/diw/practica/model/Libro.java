@@ -27,7 +27,7 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, String editorial, int fecha, String isbn, double precioEstimado, Estado estadoLibro) {
+    public Libro(String titulo, String autor, String editorial, int fecha, String isbn, double precioEstimado, Estado estadoLibro, Usuario usuario) {
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
@@ -37,10 +37,11 @@ public class Libro {
         this.estadoLibro = estadoLibro;
     }
 
+    // Getters y setters propios
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -48,7 +49,6 @@ public class Libro {
     public String getIsbn() {
         return isbn;
     }
-
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
@@ -56,7 +56,6 @@ public class Libro {
     public String getTitulo() {
         return titulo;
     }
-
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -64,7 +63,6 @@ public class Libro {
     public String getAutor() {
         return autor;
     }
-
     public void setAutor(String autor) {
         this.autor = autor;
     }
@@ -72,7 +70,6 @@ public class Libro {
     public String getEditorial() {
         return editorial;
     }
-
     public void setEditorial(String editorial) {
         this.editorial = editorial;
     }
@@ -80,7 +77,6 @@ public class Libro {
     public int getFecha() {
         return fecha;
     }
-
     public void setFecha(int fecha) {
         this.fecha = fecha;
     }
@@ -88,7 +84,6 @@ public class Libro {
     public double getPrecioEstimado() {
         return precioEstimado;
     }
-
     public void setPrecioEstimado(double precioEstimado) {
         this.precioEstimado = precioEstimado;
     }
@@ -96,8 +91,8 @@ public class Libro {
     public Estado getEstadoLibro() {
         return estadoLibro;
     }
-
     public void setEstadoLibro(Estado estadoLibro) {
         this.estadoLibro = estadoLibro;
     }
+
 }
